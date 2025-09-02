@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我们 - 东莞市三景融通精密五金有限公司</title>
+    <meta name="description" content="了解东莞市三景融通精密五金有限公司的发展历程、企业文化、技术实力和团队优势。">
+    <meta name="keywords" content="关于我们,公司介绍,企业文化,技术实力,团队优势,精密五金">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1e3c72;
+            --secondary-blue: #2a5298;
+            --accent-gold: #ffd700;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', '微软雅黑', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* 顶部标语 */
+        .top-banner {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .top-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* 导航栏 */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--primary-blue);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--primary-blue);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--secondary-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 60, 114, 0.3);
+        }
+
+        /* 页面标题 */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 80px 30px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* 内容区域 */
+        .content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 30px;
+        }
+
+        .section {
+            margin-bottom: 80px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 18px;
+        }
+
+        /* 公司简介 */
+        .company-intro {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .intro-content h3 {
+            font-size: 28px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .intro-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .intro-image {
+            text-align: center;
+        }
+
+        .intro-image i {
+            font-size: 200px;
+            color: var(--primary-blue);
+            opacity: 0.3;
+        }
+
+        /* 发展历程 */
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-blue);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            width: 45%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 55%;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -20px;
+            border-left-color: white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -20px;
+            border-right-color: white;
+        }
+
+        .timeline-year {
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+
+        .timeline-desc {
+            color: var(--text-light);
+        }
+
+        /* 企业文化 */
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .culture-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .culture-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .culture-card i {
+            font-size: 48px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .culture-card h3 {
+            font-size: 20px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .culture-card p {
+            color: var(--text-light);
+        }
+
+        /* 技术实力 */
+        .tech-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tech-stat {
+            text-align: center;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .tech-stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--primary-blue);
+            display: block;
+        }
+
+        .tech-stat-label {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+
+        /* 团队优势 */
+        .team-advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-card {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .advantage-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s infinite linear;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .advantage-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .advantage-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .advantage-card p {
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* 页脚 */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .company-intro {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 50px;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -20px;
+                border-right-color: white;
+                border-left-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部标语 -->
+    <div class="top-banner">
+        <i class="fas fa-star"></i> 专业精密五金制造 · 品质保证 · 客户至上 <i class="fas fa-star"></i>
+    </div>
+
+    <!-- 导航栏 -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">
+                <i class="fas fa-industry"></i>
+                <span>三景融通</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="about-us.html" class="active">关于我们</a></li>
+                <li><a href="products.html">产品展示</a></li>
+                <li><a href="recruitment.html">招聘信息</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-primary">立即咨询</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <h1>关于我们</h1>
+        <p>了解东莞市三景融通精密五金有限公司的发展历程与企业文化</p>
+    </section>
+
+    <!-- 内容区域 -->
+    <div class="content">
+        <!-- 公司简介 -->
+        <section class="section">
+            <div class="section-header">
+                <h2>公司简介</h2>
+                <p>专注精密五金制造，为客户提供优质产品和服务</p>
+            </div>
+            <div class="company-intro">
+                <div class="intro-content">
+                    <h3>东莞市三景融通精密五金有限公司</h3>
+                    <p>成立于2017年3月28日，注册资本100万人民币，是一家专业从事精密五金制品生产、加工、销售的企业。公司位于广东省东莞市常平镇，地理位置优越，交通便利。</p>
+                    <p>我们主要生产电机和散热风扇轴芯及变速电机齿轴毛坯，产品广泛应用于各类电机设备、散热系统、变速装置等领域。公司拥有先进的生产设备和专业的技术团队，确保产品质量稳定可靠。</p>
+                    <p>我们的主要客户群体为台系客户，凭借优质的产品质量和良好的服务，赢得了客户的广泛认可和信赖。公司秉承"质量第一、客户至上"的经营理念，致力于为客户提供最优质的产品和服务。</p>
+                </div>
+                <div class="intro-image">
+                    <i class="fas fa-industry"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- 发展历程 -->
+        <section class="section">
+            <div class="section-header">
+                <h2>发展历程</h2>
+                <p>见证我们的成长与进步</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2017年</div>
+                        <div class="timeline-title">公司成立</div>
+                        <div class="timeline-desc">东莞市三景融通精密五金有限公司正式成立，注册资本100万人民币</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2018年</div>
+                        <div class="timeline-title">设备升级</div>
+                        <div class="timeline-desc">引进先进生产设备，提升生产能力和产品质量</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2019年</div>
+                        <div class="timeline-title">客户拓展</div>
+                        <div class="timeline-desc">成功开发多个台系客户，建立稳定的合作关系</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2020年</div>
+                        <div class="timeline-title">技术提升</div>
+                        <div class="timeline-desc">加强技术研发，推出多款新产品，满足市场需求</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2021年</div>
+                        <div class="timeline-title">质量认证</div>
+                        <div class="timeline-desc">通过ISO9001质量管理体系认证，产品质量得到国际认可</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022-2024年</div>
+                        <div class="timeline-title">持续发展</div>
+                        <div class="timeline-desc">公司业务持续增长，客户满意度达到98%，成为行业知名企业</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 企业文化 -->
+        <section class="section">
+            <div class="section-header">
+                <h2>企业文化</h2>
+                <p>我们的价值观和经营理念</p>
+            </div>
+            <div class="culture-grid">
+                <div class="culture-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>企业使命</h3>
+                    <p>为客户提供高品质的精密五金制品，推动行业发展，创造社会价值</p>
+                </div>
+                <div class="culture-card">
+                    <i class="fas fa-eye"></i>
+                    <h3>企业愿景</h3>
+                    <p>成为精密五金制造行业的领先企业，打造国际知名品牌</p>
+                </div>
+                <div class="culture-card">
+                    <i class="fas fa-heart"></i>
+                    <h3>核心价值观</h3>
+                    <p>诚信经营、质量第一、客户至上、创新发展</p>
+                </div>
+                <div class="culture-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>经营理念</h3>
+                    <p>以质量求生存，以信誉求发展，以服务赢客户</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 技术实力 -->
+        <section class="section">
+            <div class="section-header">
+                <h2>技术实力</h2>
+                <p>先进设备与专业技术团队</p>
+            </div>
+            <div class="tech-stats">
+                <div class="tech-stat">
+                    <span class="tech-stat-number">6+</span>
+                    <span class="tech-stat-label">年专业经验</span>
+                </div>
+                <div class="tech-stat">
+                    <span class="tech-stat-number">50+</span>
+                    <span class="tech-stat-label">台先进设备</span>
+                </div>
+                <div class="tech-stat">
+                    <span class="tech-stat-number">20+</span>
+                    <span class="tech-stat-label">专业技术人员</span>
+                </div>
+                <div class="tech-stat">
+                    <span class="tech-stat-number">98%</span>
+                    <span class="tech-stat-label">产品合格率</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 团队优势 -->
+        <section class="section">
+            <div class="section-header">
+                <h2>团队优势</h2>
+                <p>我们的核心竞争力</p>
+            </div>
+            <div class="team-advantages">
+                <div class="advantage-card">
+                    <div class="advantage-content">
+                        <h3>专业技术团队</h3>
+                        <p>拥有经验丰富的技术团队，具备深厚的行业知识和专业技能，能够为客户提供最优质的产品解决方案。</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-content">
+                        <h3>先进生产设备</h3>
+                        <p>引进国际先进的生产设备和检测仪器，确保产品质量稳定可靠，满足客户的严格要求。</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-content">
+                        <h3>完善质量管理</h3>
+                        <p>建立完善的质量管理体系，从原材料采购到成品出厂，每个环节都严格把控，确保产品质量。</p>
+                    </div>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-content">
+                        <h3>优质客户服务</h3>
+                        <p>提供全方位的客户服务，包括产品咨询、技术支持、售后服务等，让客户无后顾之忧。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>© 2024 东莞市三景融通精密五金有限公司 版权所有</p>
+            <p>地址：广东省东莞市常平镇大呙恒丰一路80号105室</p>
+            <p>专业精密五金制造 · 品质保证 · 客户至上</p>
+        </div>
+    </footer>
+</body>
+</html>
